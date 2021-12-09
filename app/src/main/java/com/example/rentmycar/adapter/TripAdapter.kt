@@ -1,20 +1,23 @@
 package com.example.rentmycar.adapter
 
 import android.content.Context
+import android.graphics.Color
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rentmycar.R
 import com.example.rentmycar.model.Trip
 import kotlinx.android.synthetic.main.row_trips.view.*
+import kotlinx.android.synthetic.main.trips_layout.view.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-class MyAdapter (val context: Context, val tripList: List<Trip>): RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+class TripAdapter (val context: Context, val tripList: List<Trip>): RecyclerView.Adapter<TripAdapter.ViewHolder>() {
     class ViewHolder(tripView: View): RecyclerView.ViewHolder(tripView) {
         var tripDates: TextView
         var distance: TextView
@@ -22,7 +25,6 @@ class MyAdapter (val context: Context, val tripList: List<Trip>): RecyclerView.A
         init {
             tripDates = tripView.tripDates
             distance = tripView.distance
-
         }
     }
 
