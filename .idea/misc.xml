@@ -5,8 +5,10 @@
       <map>
         <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/activity_main.xml" value="0.22010869565217392" />
         <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/login_layout.xml" value="0.1" />
+        <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/main_menu.xml" value="0.5" />
         <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/row_trips.xml" value="0.22010869565217392" />
         <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/trips_layout.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/trips_plan_tip.xml" value="0.25" />
         <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/user_register.xml" value="0.2" />
         <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/cvdk99/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.16" />
@@ -19,5 +21,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.5" />
+      </ProjectState>
+    </option>
   </component>
 </project>
