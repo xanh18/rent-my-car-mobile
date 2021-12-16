@@ -19,12 +19,12 @@ import java.time.format.DateTimeFormatter
 
 class TripAdapter (val context: Context, val tripList: List<Trip>): RecyclerView.Adapter<TripAdapter.ViewHolder>() {
     class ViewHolder(tripView: View): RecyclerView.ViewHolder(tripView) {
-        var tripDates: TextView
-        var distance: TextView
+        var start_date: TextView
+        var end_date: TextView
 
         init {
-            tripDates = tripView.tripDates
-            distance = tripView.distance
+            start_date = tripView.start_date
+            end_date = tripView.end_date
         }
     }
 
@@ -35,8 +35,8 @@ class TripAdapter (val context: Context, val tripList: List<Trip>): RecyclerView
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.tripDates.text = "From: " + LocalDateTime.parse(tripList[position].startDateTime).format(DateTimeFormatter.ofPattern("dd-MM-yy   HH:mm")) + "\n" + "Until: " + LocalDateTime.parse(tripList[position].endDateTime).format(DateTimeFormatter.ofPattern("dd-MM-yy   HH:mm"))
-        holder.distance.text = tripList[position].distance.toString()
+        holder.start_date.text = LocalDateTime.parse(tripList[position].startDateTime).format(DateTimeFormatter.ofPattern("dd-MM-yy   HH:mm"))
+        holder.end_date.text = LocalDateTime.parse(tripList[position].endDateTime).format(DateTimeFormatter.ofPattern("dd-MM-yy   HH:mm"))
     }
 
     override fun getItemCount(): Int {
