@@ -41,7 +41,7 @@ class TripViewModel : ViewModel() {
             }
 
             override fun onFailure(call: Call<List<Trip>?>, t: Throwable) {
-                Log.d("MainActivity", "onFailure: " + t.message)
+                Log.d("TripViewModel", "onFailure: " + t.message)
             }
         })
     }

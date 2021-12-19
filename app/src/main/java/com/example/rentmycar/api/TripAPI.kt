@@ -2,7 +2,10 @@ package com.example.rentmycar.api
 
 import com.example.rentmycar.model.Trip
 import retrofit2.Call
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.Headers
+import retrofit2.http.POST
 import java.util.*
 
 interface TripAPI {
@@ -19,7 +22,9 @@ interface TripAPI {
     @GET("trip/1")
     fun findById(): Call<Optional<Trip>>
 
-
+    @POST("trip/plan")
+    @Headers("Content-Type:application/json")
+    fun planTrip(@Body params: Trip): Call<Trip>
 
 
 }
