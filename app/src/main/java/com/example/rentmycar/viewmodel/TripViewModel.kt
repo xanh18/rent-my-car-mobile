@@ -33,7 +33,7 @@ class TripViewModel : ViewModel() {
             .build()
             .create(TripAPI::class.java)
 
-        val retrofitData = retrofitBuilder.getData()
+        val retrofitData = retrofitBuilder.findAll()
 
         retrofitData.enqueue(object : Callback<List<Trip>?> {
             override fun onResponse(call: Call<List<Trip>?>, response: Response<List<Trip>?>) {
@@ -41,7 +41,7 @@ class TripViewModel : ViewModel() {
             }
 
             override fun onFailure(call: Call<List<Trip>?>, t: Throwable) {
-                Log.d("MainActivity", "onFailure: " + t.message)
+                Log.d("TripViewModel", "onFailure: " + t.message)
             }
         })
     }
