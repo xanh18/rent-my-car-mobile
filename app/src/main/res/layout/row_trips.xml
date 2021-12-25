@@ -20,9 +20,9 @@
 
             <ImageView
                 android:id="@+id/image_movie"
-                android:src="@mipmap/ic_launcher"
                 android:layout_width="100dp"
-                android:layout_height="100dp"/>
+                android:layout_height="100dp"
+                android:src="@mipmap/ic_launcher" />
 
             <LinearLayout
                 android:orientation="horizontal"
