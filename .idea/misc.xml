@@ -3,12 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/drawable/logo.xml" value="0.1390625" />
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/car_reg.xml" value="0.4421875" />
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/login_layout.xml" value="0.4" />
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/main_layout.xml" value="0.4453125" />
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/main_menu.xml" value="0.44375" />
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/menu_cars.xml" value="0.4421875" />
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/menu_trips.xml" value="0.44375" />
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/row_cars.xml" value="0.4421875" />
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/row_trips.xml" value="0.4" />
         <entry key="..\:/Users/cvdk99/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.16" />
         <entry key="..\:/Users/cvdk99/AndroidStudioProjects/MyApplication/app/src/main/res/layout/row_trips.xml" value="0.6163265306122448" />
-        <entry key="..\:/Users/cvdk99/AndroidStudioProjects/RentMyCar/app/src/main/res/layout/login_layout.xml" value="0.25" />
-        <entry key="..\:/Users/cvdk99/AndroidStudioProjects/RentMyCar/app/src/main/res/layout/menu_trips.xml" value="0.19427083333333334" />
-        <entry key="..\:/Users/cvdk99/AndroidStudioProjects/RentMyCar/app/src/main/res/layout/row_trips.xml" value="0.25" />
-        <entry key="..\:/Users/cvdk99/AndroidStudioProjects/RentMyCar/app/src/main/res/layout/trips_layout.xml" value="0.20677083333333332" />
       </map>
     </option>
   </component>
@@ -17,12 +23,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.67" />
-      </ProjectState>
-    </option>
   </component>
 </project>
