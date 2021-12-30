@@ -1,5 +1,6 @@
 package com.example.rentmycar
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,57 +11,74 @@ import android.widget.Button
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.rentmycar.activity.TripActivity
 import com.example.rentmycar.adapter.TripAdapter
 import com.example.rentmycar.api.TripAPI
 import com.example.rentmycar.model.Car
 import com.example.rentmycar.model.Trip
 import com.example.rentmycar.model.User
 import com.example.rentmycar.viewmodel.TripViewModel
+import kotlinx.android.synthetic.main.main_layout.*
+import kotlinx.android.synthetic.main.main_menu.*
 import kotlinx.android.synthetic.main.trips_layout.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-const val BASE_URL = "http://10.0.2.2:8080/"
+const val BASE_URL = "http://10.0.2.2:8090/"
 class MainActivity : AppCompatActivity() {
 
     lateinit var tripAdapter: TripAdapter
     lateinit var linearLayoutManager: LinearLayoutManager
     lateinit var test_button : Button
+    lateinit var mainMenuMyTripBtn : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        getMyData()
+//        getMyData()
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.trips_layout)
+        setContentView(R.layout.main_layout)
 
-        test_button = findViewById(R.id.test_button)
-        test_button.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(view: View?) {
-                val params = Trip(startDateTime = "2021-12-10T13:49:51.141Z", endDateTime = "2021-12-12T13:49:51.141Z", acceleration = null, distance = null, id = null, location = null,
-                    car = Car(1, null, null, null, null, null, null, null, null, null, null, null),
-                    user = User(1, null, null, null, null, null, null, null, null, null, null, null, null)
-                )
-                addTrip(params){
-                    if (it?.id != null) {
-                        d("succes", it.id.toString())
-                        d("Success", ":)")
-                        // it = newly added user parsed as response
-                        // it?.id = newly added user ID
-                    } else {
-                        d("Error", ":(");
-                    }
-                }
-                test_button.setBackgroundColor(Color.GRAY)
-            }
-        })
-
-        recyclerview_trips.setHasFixedSize(true)
-        linearLayoutManager = LinearLayoutManager(this)
-        recyclerview_trips.layoutManager = linearLayoutManager
+//        main_menu_go_to_account.setOnClickListener{
+//            setContentView(R.layout.main_layout);
+//        }
 
 
-        getMyData()
+        mainMenuMyTripBtn = findViewById(R.id.main_menu_my_trip_btn)
+        mainMenuMyTripBtn.setOnClickListener{
+            val Intent = Intent(this, TripActivity::class.java)
+            startActivity(Intent)
+        }
+
+
+
+//        test_button = findViewById(R.id.test_button)
+//        test_button.setOnClickListener(object : View.OnClickListener {
+//            override fun onClick(view: View?) {
+//                val params = Trip(startDateTime = "2021-12-10T13:49:51.141Z", endDateTime = "2021-12-12T13:49:51.141Z", acceleration = null, distance = null, id = null, location = null,
+//                    car = Car(1, null, null, null, null, null, null, null, null, null, null, null),
+//                    user = User(1, null, null, null, null, null, null, null, null, null, null, null, null)
+//                )
+//                addTrip(params){
+//                    if (it?.id != null) {
+//                        d("succes", it.id.toString())
+//                        d("Success", ":)")
+//                        // it = newly added user parsed as response
+//                        // it?.id = newly added user ID
+//                    } else {
+//                        d("Error", ":(");
+//                    }
+//                }
+//                test_button.setBackgroundColor(Color.GRAY)
+//            }
+//        })
+//
+//        recyclerview_trips.setHasFixedSize(true)
+//        linearLayoutManager = LinearLayoutManager(this)
+//        recyclerview_trips.layoutManager = linearLayoutManager
+//
+//
+//        getMyData()
     }
 
     private fun addTrip(params: Trip, onResult: (Trip?) -> Unit){
@@ -86,4 +104,6 @@ class MainActivity : AppCompatActivity() {
             recyclerview_trips.adapter = tripAdapter
         })
     }
+
+
 }

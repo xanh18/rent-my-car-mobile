@@ -31,29 +31,16 @@
         app:layout_constraintTop_toBottomOf="@+id/main_menu_greeting"
         tools:text="Username" />
 
-    <Button
-        android:id="@+id/main_menu_rent_car"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="71dp"
-        android:layout_marginTop="570dp"
-        android:layout_marginEnd="232dp"
-        android:layout_marginBottom="113dp"
-        android:text="Rent Car"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/main_menu_plan_trip"
+        android:id="@+id/main_menu_register_car"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="245dp"
-        android:layout_marginTop="570dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="113dp"
-        android:text="Plan trip"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="558dp"
+        android:layout_marginEnd="135dp"
+        android:layout_marginBottom="125dp"
+        android:text="Register Car"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
