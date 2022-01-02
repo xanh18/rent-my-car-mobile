@@ -1,12 +1,8 @@
 package com.example.rentmycar.activity
 
-import android.content.Intent
-import android.graphics.Color
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.util.Log.d
-import android.view.View
 import android.widget.Button
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
@@ -15,19 +11,15 @@ import com.example.rentmycar.R
 import com.example.rentmycar.ServiceBuilder
 import com.example.rentmycar.adapter.TripAdapter
 import com.example.rentmycar.api.TripAPI
-import com.example.rentmycar.model.Car
 import com.example.rentmycar.model.Trip
-import com.example.rentmycar.model.User
 import com.example.rentmycar.viewmodel.TripViewModel
-import kotlinx.android.synthetic.main.main_layout.*
-import kotlinx.android.synthetic.main.main_menu.*
 import kotlinx.android.synthetic.main.trips_layout.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 
-const val BASE_URL = "http://10.0.2.2:8090/"
+//const val BASE_URL = "http://10.0.2.2:8090/"
 class TripActivity: AppCompatActivity() {
 
     lateinit var tripAdapter: TripAdapter
@@ -64,9 +56,9 @@ class TripActivity: AppCompatActivity() {
 //            }
 //        })
 //
-        recyclerview_trips.setHasFixedSize(true)
+        recyclerview_cars.setHasFixedSize(true)
         linearLayoutManager = LinearLayoutManager(this)
-        recyclerview_trips.layoutManager = linearLayoutManager
+        recyclerview_cars.layoutManager = linearLayoutManager
 
 
         getMyData()
@@ -92,7 +84,7 @@ class TripActivity: AppCompatActivity() {
         model.getTrips().observe(this, Observer<List<Trip>>{ trips ->
             tripAdapter = TripAdapter(baseContext, trips)
             tripAdapter.notifyDataSetChanged()
-            recyclerview_trips.adapter = tripAdapter
+            recyclerview_cars.adapter = tripAdapter
         })
     }
 

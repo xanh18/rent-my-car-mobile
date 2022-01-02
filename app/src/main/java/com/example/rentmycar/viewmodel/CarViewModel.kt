@@ -33,16 +33,16 @@ class CarViewModel : ViewModel() {
             .build()
             .create(CarAPI::class.java)
 
-//        val retrofitData = retrofitBuilder.findAll()
-//
-//        retrofitData.enqueue(object : Callback<List<Car>?> {
-//            override fun onResponse(call: Call<List<Car>?>, response: Response<List<Car>?>) {
-//                cars.postValue(response.body())
-//            }
-//
-//            override fun onFailure(call: Call<List<Car>?>, t: Throwable) {
-//                Log.d("MainActivity", "onFailure: " + t.message)
-//            }
-//        })
+        val retrofitData = retrofitBuilder.findAll()
+
+        retrofitData.enqueue(object : Callback<List<Car>?> {
+            override fun onResponse(call: Call<List<Car>?>, response: Response<List<Car>?>) {
+                cars.postValue(response.body())
+            }
+
+            override fun onFailure(call: Call<List<Car>?>, t: Throwable) {
+                Log.d("MainActivity", "onFailure: " + t.message)
+            }
+        })
     }
 }

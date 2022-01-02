@@ -13,7 +13,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class TripViewModel : ViewModel() {
+class TripViewModel: ViewModel() {
 
     private val trips: MutableLiveData<List<Trip>> by lazy {
         MutableLiveData<List<Trip>>().also {
