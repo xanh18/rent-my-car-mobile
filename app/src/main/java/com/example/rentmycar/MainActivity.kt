@@ -7,6 +7,7 @@ import android.widget.Button
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.rentmycar.activity.CarActivity
 import com.example.rentmycar.activity.TripActivity
 import com.example.rentmycar.adapter.TripAdapter
 import com.example.rentmycar.api.TripAPI
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var linearLayoutManager: LinearLayoutManager
     lateinit var test_button : Button
     lateinit var mainMenuMyTripBtn : Button
+    lateinit var mainMenuCarBtn : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
 //        getMyData()
@@ -39,6 +41,12 @@ class MainActivity : AppCompatActivity() {
         mainMenuMyTripBtn = findViewById(R.id.main_menu_my_trip_btn)
         mainMenuMyTripBtn.setOnClickListener{
             val Intent = Intent(this, TripActivity::class.java)
+            startActivity(Intent)
+        }
+
+        mainMenuCarBtn = findViewById(R.id.main_menu_register_car_btn)
+        mainMenuCarBtn.setOnClickListener{
+            val Intent = Intent(this, CarActivity::class.java)
             startActivity(Intent)
         }
 
