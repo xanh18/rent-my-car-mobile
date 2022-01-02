@@ -25,6 +25,10 @@ class TripViewModel : ViewModel() {
         return trips
     }
 
+    fun updateTrips(){
+        loadTrips()
+    }
+
     private fun loadTrips() {
         // Do an asynchronous operation to fetch trips.
         val retrofitBuilder = Retrofit.Builder()
