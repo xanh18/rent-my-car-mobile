@@ -3,20 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/activity_main.xml" value="0.22010869565217392" />
-        <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/login_layout.xml" value="0.33" />
-        <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/main_layout.xml" value="0.33" />
-        <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/main_menu.xml" value="0.37433155080213903" />
-        <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/menu_cars.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/menu_trips.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/row_cars.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/row_trips.xml" value="0.22010869565217392" />
-        <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/trip_plan_trip.xml" value="0.1" />
-        <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/trips_layout.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/trips_plan_tip.xml" value="0.1" />
-        <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/trips_plan_trip.xml" value="0.29375" />
-        <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/user_register.xml" value="0.2" />
-        <entry key="..\:/Users/Xanh/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/drawable/logo.xml" value="0.1390625" />
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/car_reg.xml" value="0.4421875" />
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/cars_layout.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/login_layout.xml" value="0.4" />
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/main_layout.xml" value="0.4453125" />
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/main_menu.xml" value="0.44375" />
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/menu_cars.xml" value="0.4421875" />
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/menu_trips.xml" value="0.44375" />
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/row_cars.xml" value="0.4421875" />
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/row_trips.xml" value="0.4" />
+        <entry key="..\:/Users/DvdMe/AndroidStudioProjects/Android-rent-my-car/app/src/main/res/layout/trips_layout.xml" value="0.440625" />
         <entry key="..\:/Users/cvdk99/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.16" />
         <entry key="..\:/Users/cvdk99/AndroidStudioProjects/MyApplication/app/src/main/res/layout/row_trips.xml" value="0.6163265306122448" />
       </map>
@@ -27,12 +25,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.1" />
-      </ProjectState>
-    </option>
   </component>
 </project>
