@@ -1,8 +1,11 @@
 package com.example.rentmycar.activity
 
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log.d
+import android.view.View
 import android.widget.Button
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
@@ -11,7 +14,9 @@ import com.example.rentmycar.R
 import com.example.rentmycar.ServiceBuilder
 import com.example.rentmycar.adapter.TripAdapter
 import com.example.rentmycar.api.TripAPI
+import com.example.rentmycar.model.Car
 import com.example.rentmycar.model.Trip
+import com.example.rentmycar.model.User
 import com.example.rentmycar.viewmodel.TripViewModel
 import kotlinx.android.synthetic.main.trips_layout.*
 import retrofit2.Call
@@ -54,34 +59,10 @@ class TripActivity: AppCompatActivity() {
             }
         })
 
-
         recyclerview_trips.setHasFixedSize(true)
-
-//        test_button = findViewById(R.id.test_button)
-//        test_button.setOnClickListener(object : View.OnClickListener {
-//            override fun onClick(view: View?) {
-//                val params = Trip(startDateTime = "2021-12-10T13:49:51.141Z", endDateTime = "2021-12-12T13:49:51.141Z", acceleration = null, distance = null, id = null, location = null,
-//                    car = Car(1, null, null, null, null, null, null, null, null, null, null, null),
-//                    user = User(1, null, null, null, null, null, null, null, null, null, null, null, null)
-//                )
-//                addTrip(params){
-//                    if (it?.id != null) {
-//                        d("succes", it.id.toString())
-//                        d("Success", ":)")
-//                        // it = newly added user parsed as response
-//                        // it?.id = newly added user ID
-//                    } else {
-//                        d("Error", ":(");
-//                    }
-//                }
-//                test_button.setBackgroundColor(Color.GRAY)
-//            }
-//        })
-//
-        recyclerview_cars.setHasFixedSize(true)
         
         linearLayoutManager = LinearLayoutManager(this)
-        recyclerview_cars.layoutManager = linearLayoutManager
+        recyclerview_trips.layoutManager = linearLayoutManager
 
 
         getMyData(false)
@@ -107,7 +88,7 @@ class TripActivity: AppCompatActivity() {
         model.getTrips().observe(this, Observer<List<Trip>>{ trips ->
             tripAdapter = TripAdapter(baseContext, trips)
             tripAdapter.notifyDataSetChanged()
-            recyclerview_cars.adapter = tripAdapter
+            recyclerview_trips.adapter = tripAdapter
         })
         if (update) {
             model.updateTrips()
