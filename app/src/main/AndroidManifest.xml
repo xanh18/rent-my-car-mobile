@@ -24,6 +24,9 @@
         <activity
             android:name=".activity.TripActivity"
             />
+        <activity
+            android:name=".activity.CarActivity"
+            />
     </application>
 
 </manifest>

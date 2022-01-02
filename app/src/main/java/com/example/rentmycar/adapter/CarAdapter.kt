@@ -7,43 +7,50 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rentmycar.R
 import com.example.rentmycar.model.Car
-import kotlinx.android.synthetic.main.login_layout.view.*
+import kotlinx.android.synthetic.main.row_cars.view.*
 
-class CarAdapter (val context: Context, val carList: List<Car>): RecyclerView.Adapter<CarAdapter.ViewHolder>() {
+class CarAdapter (val context: Context, var carList: List<Car>): RecyclerView.Adapter<CarAdapter.ViewHolder>() {
     class ViewHolder(carView: View): RecyclerView.ViewHolder(carView) {
-        //var login_input: TextView
-        //var distance: TextView
-        var login_button: Button
+
+        var iv_image: ImageView
+        var tv_brand: TextView
+        var tv_brand_model: TextView
+        var tv_price: TextView
 
         init {
-//            tripDates = tripView.tripDates
-//            distance = tripView.distance
-            login_button = carView.login_button
-            login_button.setOnClickListener{
-            }
-
+            iv_image = carView.iv_image
+            tv_brand = carView.tv_brand
+            tv_brand_model = carView.tv_brand_model
+            tv_price = carView.tv_price
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
-        var itemView = LayoutInflater.from(context).inflate(R.layout.row_trips, parent, false)
+        var itemView = LayoutInflater.from(context).inflate(R.layout.row_cars, parent, false)
         return ViewHolder(itemView)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        holder.tripDates.text = "From: " + LocalDateTime.parse(tripList[position].startDateTime).format(DateTimeFormatter.ofPattern("dd-MM-yy   HH:mm")) + "\n" + "Until: " + LocalDateTime.parse(tripList[position].endDateTime).format(DateTimeFormatter.ofPattern("dd-MM-yy   HH:mm"))
-//        holder.distance.text = tripList[position].distance.toString
-        holder.login_button
+        holder.tv_brand.text = carList[position].brand
+        holder.tv_brand_model.text = carList[position].brandModel
+        holder.tv_price.text = carList[position].startRate.toString()
     }
 
     override fun getItemCount(): Int {
         return carList.size
+    }
+
+    fun update(newCarList:List<Car>){
+        carList = newCarList
+        notifyDataSetChanged()
     }
 
 }
