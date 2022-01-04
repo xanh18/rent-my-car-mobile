@@ -16,4 +16,22 @@ interface CarAPI {
 
     @POST("car/save")
     fun saveCar(): Call<Car>
+
+    @GET("car/brand/{brand}")
+    fun findByBrandContaining(): Call<List<Car>>
+
+    @GET("car/user/{id}")
+    fun findByUser_Id(): Call<List<Car>>
+
+    @GET("car/{car}/{available}")
+    fun findByAvailable(): Call<List<Car>>
+
+    @GET("car/search/kmrate/{kmrate}")
+    fun findByKmRateLessThanEqual(): Call<List<Car>>
+
+    @POST("car/search/available")
+    fun findByStartDateTimeLessThanEqualAndEndDateTimeGreaterThanEqual(): Call<List<Car>>
+
+    @GET("car/search/startRate/{startRate}")
+    fun findByStartRateLessThanEqual(): Call<List<Car>>
 }
