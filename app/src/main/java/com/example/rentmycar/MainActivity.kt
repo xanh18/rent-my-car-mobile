@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rentmycar.activity.CarActivity
 import com.example.rentmycar.activity.TripActivity
+import com.example.rentmycar.activity.UserActivity
 import com.example.rentmycar.adapter.TripAdapter
 import com.example.rentmycar.api.TripAPI
 import com.example.rentmycar.model.Trip
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         mainMenuMyTripBtn = findViewById(R.id.main_menu_my_trip_btn)
         mainMenuMyTripBtn.setOnClickListener{
-            val Intent = Intent(this, TripActivity::class.java)
+            val Intent = Intent(this, UserActivity::class.java)
             startActivity(Intent)
         }
 
@@ -49,6 +50,8 @@ class MainActivity : AppCompatActivity() {
             val Intent = Intent(this, CarActivity::class.java)
             startActivity(Intent)
         }
+
+
 
 
 

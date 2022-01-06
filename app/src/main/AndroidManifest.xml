@@ -22,6 +22,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activity.UserActivity"
+            />
+        <activity
             android:name=".activity.TripActivity"
             />
         <activity
