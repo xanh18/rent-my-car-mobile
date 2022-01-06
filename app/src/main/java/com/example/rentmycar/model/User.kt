@@ -13,6 +13,7 @@ class User (
     @SerializedName("longitude") val longitude: Double?,
     @SerializedName("latitude") val latitude: Double?,
     @SerializedName("loggedIn") val loggedIn: Boolean?,
+    @SerializedName("username") val username: String?,
     @SerializedName("password") val password: String?,
     @SerializedName("trips") val trips: List<Trip>?,
     @SerializedName("cars") val cars: List<Car>?

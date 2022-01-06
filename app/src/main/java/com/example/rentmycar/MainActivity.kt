@@ -3,6 +3,7 @@ package com.example.rentmycar
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log.d
 import android.widget.Button
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
@@ -47,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         mainMenuMyTripBtn = findViewById(R.id.main_menu_my_trip_btn)
         mainMenuMyTripBtn.setOnClickListener{
             val Intent = Intent(this, UserActivity::class.java)
+            d("a", "b")
             startActivity(Intent)
         }
 

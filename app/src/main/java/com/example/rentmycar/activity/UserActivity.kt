@@ -3,6 +3,9 @@ package com.example.rentmycar.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.util.Log.d
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.activity.viewModels
@@ -30,59 +33,63 @@ import retrofit2.Callback
 import java.net.URI.create
 
 
-const val BASE_URL = "http://10.0.2.2:8090/"
+//const val BASE_URL = "http://10.0.2.2:8090/"
 class UserActivity: AppCompatActivity() {
 
     lateinit var userAdapter: UserAdapter
     lateinit var constraintLayout: ConstraintLayout
     lateinit var registerUserBtn : Button
-    val register_username_input =findViewById(R.id.register_username_input) as EditText
-    val register_password_input =findViewById(R.id.register_password_input) as EditText
-
-
-
-
-    private val client = OkHttpClient()
+    lateinit var register_username_input : EditText
+    lateinit var register_password_input : EditText
+    //val register_username_input =findViewById(R.id.register_username_input) as EditText
+    //val register_password_input =findViewById(R.id.register_password_input) as EditText
+    //private val client = OkHttpClient()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.user_register)
+        register_username_input = findViewById(R.id.register_username_input)
+        register_password_input = findViewById(R.id.register_password_input)
+        registerUserBtn = findViewById(R.id.register_button)
 
+        registerUserBtn.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(view: View?) {
+                registerUser(User(null, null, null, null, null, null, null, null, null,
+                    null, register_username_input.text.toString(), register_password_input.text.toString(), null, null)){
+                    if (it?.id != null) {
+                        Log.d("Succes", it.id.toString())
+                        Log.d("Succes", ":)")
+                        // it = logged in user parsed as response
+                        // it?.id = user ID
+                    } else {
+                        Log.d("Error", ":(");
+                    }
+                }
+            }
+        })
         //getMyData()
     }
 
-
-
-
-    private fun RegistrerUser(register_username_input: String,register_password_input: String  ){
-
-        registerUserBtn = findViewById(R.id.register_button)
-        registerUserBtn.setOnClickListener {
-
-            val retrofit = ServiceBuilder.buildService(UserAPI::class.java)
-            retrofit.registrerUser().enqueue(
-                object : Callback<User> {
-                    override fun onFailure(call: Call<User>, t: Throwable) {
-
-                    }
-
-                    override fun onResponse(call: Call<User>, response: Response<User>) {
-                        val addedTrip = response.body()
-                        onResult(addedTrip)
-                    }
+    private fun registerUser(params: User, onResult: (User?) -> Unit) {
+        val retrofit = ServiceBuilder.buildService(UserAPI::class.java)
+        retrofit.registerUser(params).enqueue(
+            object : Callback<User> {
+                override fun onFailure(call: Call<User>, t: Throwable) {
+                    onResult(null)
                 }
-            )
-        }
+                override fun onResponse(call: Call<User>, response: Response<User>) {
+                    val user = response.body()
+                    onResult(user)
+                }
+            }
+        )
+    }
 
-
-//
     private fun getMyData() {
         val model: UserViewModel by viewModels()
         model.getUsers().observe(this, Observer<List<User>> { users ->
             userAdapter = UserAdapter(baseContext, users)
             userAdapter.notifyDataSetChanged()
-
-
         })
     }
 }

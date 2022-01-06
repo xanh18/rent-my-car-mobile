@@ -17,7 +17,5 @@ interface UserAPI {
 
     @POST("user/register")
     @Headers("Content-Type:application/json")
-    fun registrerUser(): Call<User>
-
-
+    fun registerUser(@Body params: User): Call<User>
 }

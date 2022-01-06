@@ -42,7 +42,7 @@ class TripActivity: AppCompatActivity() {
             override fun onClick(view: View?) {
                 val params = Trip(startDateTime = "2021-12-10T13:49:51.141Z", endDateTime = "2021-12-12T13:49:51.141Z", acceleration = null, distance = null, id = null, location = null,
                     car = Car(1, null, null, null, null, null, null, null, null, null, null, null),
-                    user = User(1, null, null, null, null, null, null, null, null, null, null, null, null)
+                    user = User(1, null, null, null, null, null, null, null, null, null, null,null, null, null)
                 )
                 addTrip(params){
                     if (it?.id != null) {
