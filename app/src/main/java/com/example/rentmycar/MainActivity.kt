@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
         mainMenuMyTripBtn = findViewById(R.id.main_menu_my_trip_btn)
         mainMenuMyTripBtn.setOnClickListener{
-            val Intent = Intent(this, TripActivity::class.java)
+            val Intent = Intent(this, UserActivity::class.java)
             startActivity(Intent)
         }
 
@@ -61,6 +61,8 @@ class MainActivity : AppCompatActivity() {
             val Intent = Intent(this, CarActivity::class.java)
             startActivity(Intent)
         }
+
+
 
 //        test_button = findViewById(R.id.test_button)
 //        test_button.setOnClickListener(object : View.OnClickListener {

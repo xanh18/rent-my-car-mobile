@@ -38,16 +38,6 @@
         app:layout_constraintTop_toBottomOf="@+id/register_username_input"
         tools:text="Password" />
 
-    <TextView
-        android:id="@+id/register_email_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_password_input"
-        tools:text="Email" />
 
     <EditText
         android:id="@+id/register_username_input"
@@ -72,30 +62,20 @@
         app:layout_constraintTop_toBottomOf="@+id/register_password_label"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <EditText
-        android:id="@+id/register_email_input"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_email_label"
-        tools:ignore="SpeakableTextPresentCheck" />
+
 
 
     <Button
         android:id="@+id/register_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="100dp"
         android:background="#4CE7B7"
         android:textColor="#455A64"
         app:cornerRadius="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_email_input"
+        app:layout_constraintTop_toBottomOf="@+id/register_password_input"
         tools:text="Registrer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
