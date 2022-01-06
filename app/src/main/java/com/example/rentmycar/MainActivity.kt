@@ -7,11 +7,17 @@ import android.widget.Button
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.rentmycar.activity.CarActivity
 import com.example.rentmycar.activity.TripActivity
+import com.example.rentmycar.activity.UserActivity
 import com.example.rentmycar.adapter.TripAdapter
 import com.example.rentmycar.api.TripAPI
+import com.example.rentmycar.model.Car
 import com.example.rentmycar.model.Trip
+import com.example.rentmycar.model.User
 import com.example.rentmycar.viewmodel.TripViewModel
+import kotlinx.android.synthetic.main.main_layout.*
+import kotlinx.android.synthetic.main.main_menu.*
 import kotlinx.android.synthetic.main.trips_layout.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -20,6 +26,8 @@ import retrofit2.Response
 const val BASE_URL = "http://10.0.2.2:8090/"
 class MainActivity : AppCompatActivity() {
 
+    lateinit var mainMenuPlanTripsBtn: Button
+    lateinit var mainMenuRegisterCarBtn: Button
     lateinit var tripAdapter: TripAdapter
     lateinit var linearLayoutManager: LinearLayoutManager
     lateinit var test_button : Button
@@ -39,6 +47,18 @@ class MainActivity : AppCompatActivity() {
         mainMenuMyTripBtn = findViewById(R.id.main_menu_my_trip_btn)
         mainMenuMyTripBtn.setOnClickListener{
             val Intent = Intent(this, TripActivity::class.java)
+            startActivity(Intent)
+        }
+
+        mainMenuRegisterCarBtn = findViewById(R.id.main_menu_register_car_btn)
+        mainMenuRegisterCarBtn.setOnClickListener{
+            val Intent = Intent(this, UserActivity::class.java)
+            startActivity(Intent)
+        }
+
+        mainMenuPlanTripsBtn = findViewById(R.id.main_menu_plan_trips_btn)
+        mainMenuPlanTripsBtn.setOnClickListener{
+            val Intent = Intent(this, CarActivity::class.java)
             startActivity(Intent)
         }
 
