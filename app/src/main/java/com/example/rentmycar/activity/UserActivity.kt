@@ -31,7 +31,7 @@ import java.net.URI.create
 
 
 const val BASE_URL = "http://10.0.2.2:8090/"
-class UserActivity : AppCompatActivity() {
+class UserActivity: AppCompatActivity() {
 
     lateinit var userAdapter: UserAdapter
     lateinit var constraintLayout: ConstraintLayout
@@ -86,4 +86,3 @@ class UserActivity : AppCompatActivity() {
         })
     }
 }
-

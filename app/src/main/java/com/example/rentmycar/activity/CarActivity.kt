@@ -10,6 +10,7 @@ import com.example.rentmycar.R
 import com.example.rentmycar.adapter.CarAdapter
 import com.example.rentmycar.model.Car
 import com.example.rentmycar.viewmodel.CarViewModel
+import kotlinx.android.synthetic.main.cars_layout.*
 import kotlinx.android.synthetic.main.trips_layout.*
 
 
