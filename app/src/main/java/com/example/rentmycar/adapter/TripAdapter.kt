@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.trips_layout.view.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-class TripAdapter (val context: Context, val tripList: List<Trip>): RecyclerView.Adapter<TripAdapter.ViewHolder>() {
+class TripAdapter (val context: Context, var tripList: List<Trip>): RecyclerView.Adapter<TripAdapter.ViewHolder>() {
     class ViewHolder(tripView: View): RecyclerView.ViewHolder(tripView) {
         var start_date: TextView
         var end_date: TextView
@@ -37,6 +37,11 @@ class TripAdapter (val context: Context, val tripList: List<Trip>): RecyclerView
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.start_date.text = LocalDateTime.parse(tripList[position].startDateTime).format(DateTimeFormatter.ofPattern("dd-MM-yy   HH:mm"))
         holder.end_date.text = LocalDateTime.parse(tripList[position].endDateTime).format(DateTimeFormatter.ofPattern("dd-MM-yy   HH:mm"))
+    }
+
+    fun update(newTripList:List<Trip>){
+        tripList = newTripList
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {

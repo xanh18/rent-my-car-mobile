@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var linearLayoutManager: LinearLayoutManager
     lateinit var test_button : Button
     lateinit var mainMenuMyTripBtn : Button
+    lateinit var mainMenuCarBtn : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
 //        getMyData()
@@ -42,7 +43,6 @@ class MainActivity : AppCompatActivity() {
 //        main_menu_go_to_account.setOnClickListener{
 //            setContentView(R.layout.main_layout);
 //        }
-
 
         mainMenuMyTripBtn = findViewById(R.id.main_menu_my_trip_btn)
         mainMenuMyTripBtn.setOnClickListener{
@@ -61,8 +61,6 @@ class MainActivity : AppCompatActivity() {
             val Intent = Intent(this, CarActivity::class.java)
             startActivity(Intent)
         }
-
-
 
 //        test_button = findViewById(R.id.test_button)
 //        test_button.setOnClickListener(object : View.OnClickListener {
@@ -92,30 +90,27 @@ class MainActivity : AppCompatActivity() {
 //
 //        getMyData()
     }
-
-    private fun addTrip(params: Trip, onResult: (Trip?) -> Unit){
-        val retrofit = ServiceBuilder.buildService(TripAPI::class.java)
-        retrofit.planTrip(params).enqueue(
-            object : Callback<Trip> {
-                override fun onFailure(call: Call<Trip>, t: Throwable) {
-                    onResult(null)
-                }
-                override fun onResponse( call: Call<Trip>, response: Response<Trip>) {
-                    val addedTrip = response.body()
-                    onResult(addedTrip)
-                }
-            }
-        )
-    }
-
-    private fun getMyData() {
-        val model: TripViewModel by viewModels()
-        model.getTrips().observe(this, Observer<List<Trip>>{ trips ->
-            tripAdapter = TripAdapter(baseContext, trips)
-            tripAdapter.notifyDataSetChanged()
-            recyclerview_cars.adapter = tripAdapter
-        })
-    }
-
-
+//    private fun addTrip(params: Trip, onResult: (Trip?) -> Unit){
+//        val retrofit = ServiceBuilder.buildService(TripAPI::class.java)
+//        retrofit.planTrip(params).enqueue(
+//            object : Callback<Trip> {
+//                override fun onFailure(call: Call<Trip>, t: Throwable) {
+//                    onResult(null)
+//                }
+//                override fun onResponse( call: Call<Trip>, response: Response<Trip>) {
+//                    val addedTrip = response.body()
+//                    onResult(addedTrip)
+//                }
+//            }
+//        )
+//    }
+//
+//    private fun getMyData() {
+//        val model: TripViewModel by viewModels()
+//        model.getTrips().observe(this, Observer<List<Trip>>{ trips ->
+//            tripAdapter = TripAdapter(baseContext, trips)
+//            tripAdapter.notifyDataSetChanged()
+//            recyclerview_trips.adapter = tripAdapter
+//        })
+//    }
 }
