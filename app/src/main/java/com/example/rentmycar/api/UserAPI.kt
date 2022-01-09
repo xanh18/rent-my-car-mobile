@@ -12,8 +12,9 @@ import retrofit2.http.POST
 
 
 interface UserAPI {
-    @GET("user/login")
-    fun getData(): Call<String>
+    @POST("user/login")
+    @Headers("Content-Type:application/json")
+    fun loginUser(@Body params: User): Call<User>
 
     @POST("user/register")
     @Headers("Content-Type:application/json")

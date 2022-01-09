@@ -48,7 +48,6 @@ class MainActivity : AppCompatActivity() {
         mainMenuMyTripBtn = findViewById(R.id.main_menu_my_trip_btn)
         mainMenuMyTripBtn.setOnClickListener{
             val Intent = Intent(this, UserActivity::class.java)
-            d("a", "b")
             startActivity(Intent)
         }
 

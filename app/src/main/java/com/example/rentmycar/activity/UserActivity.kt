@@ -39,11 +39,10 @@ class UserActivity: AppCompatActivity() {
     lateinit var userAdapter: UserAdapter
     lateinit var constraintLayout: ConstraintLayout
     lateinit var registerUserBtn : Button
+    lateinit var loginUserBtn : Button
     lateinit var register_username_input : EditText
     lateinit var register_password_input : EditText
-    //val register_username_input =findViewById(R.id.register_username_input) as EditText
-    //val register_password_input =findViewById(R.id.register_password_input) as EditText
-    //private val client = OkHttpClient()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,23 +50,56 @@ class UserActivity: AppCompatActivity() {
         register_username_input = findViewById(R.id.register_username_input)
         register_password_input = findViewById(R.id.register_password_input)
         registerUserBtn = findViewById(R.id.register_button)
+        loginUserBtn = findViewById(R.id.login_button)
 
         registerUserBtn.setOnClickListener(object : View.OnClickListener {
             override fun onClick(view: View?) {
                 registerUser(User(null, null, null, null, null, null, null, null, null,
                     null, register_username_input.text.toString(), register_password_input.text.toString(), null, null)){
                     if (it?.id != null) {
-                        Log.d("Succes", it.id.toString())
-                        Log.d("Succes", ":)")
+                        Log.d("Success", it.id.toString())
+                        Log.d("Success", ":)")
                         // it = logged in user parsed as response
                         // it?.id = user ID
                     } else {
-                        Log.d("Error", ":(");
+                        Log.d("Error", ":(")
+                    }
+                }
+            }
+        })
+
+        loginUserBtn.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(view: View?) {
+                loginUser(User(null, null, null, null, null, null, null, null, null,
+                    null, register_username_input.text.toString(), register_password_input.text.toString(), null, null)){
+                    if (it?.id != null) { //username == register_username_input.text.toString() && it?.password == register_password_input.text.toString() ) {
+                        Log.d("Success", it.id.toString())
+                        Log.d("Success", ":)")
+                        // it = logged in user parsed as response
+                        // it?.id = user ID
+                    } else {
+                        Log.d("Error", ":(")
                     }
                 }
             }
         })
         //getMyData()
+    }
+
+//
+    private fun loginUser(params: User, onResult: (User?) -> Unit) {
+        val retrofit = ServiceBuilder.buildService(UserAPI::class.java)
+        retrofit.loginUser(params).enqueue(
+            object : Callback<User> {
+                override fun onFailure(call: Call<User>, t: Throwable) {
+                    onResult(null)
+                }
+                override fun onResponse(call: Call<User>, response: Response<User>) {
+                    val user = response.body()
+                    onResult(user)
+                }
+            }
+        )
     }
 
     private fun registerUser(params: User, onResult: (User?) -> Unit) {
@@ -84,6 +116,7 @@ class UserActivity: AppCompatActivity() {
             }
         )
     }
+
 
     private fun getMyData() {
         val model: UserViewModel by viewModels()
