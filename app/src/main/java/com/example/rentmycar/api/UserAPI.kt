@@ -16,9 +16,6 @@ interface UserAPI {
     @Headers("Content-Type:application/json")
     fun loginUser(@Body params: User): Call<User>
 
-
-    fun getData(): Call<String>
-
     @POST("user/register")
     @Headers("Content-Type:application/json")
     fun registerUser(@Body params: User): Call<User>

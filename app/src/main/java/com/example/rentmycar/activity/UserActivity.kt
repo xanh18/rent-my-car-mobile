@@ -57,12 +57,12 @@ class UserActivity: AppCompatActivity() {
                 registerUser(User(null, null, null, null, null, null, null, null, null,
                     null, register_username_input.text.toString(), register_password_input.text.toString(), null, null)){
                     if (it?.id != null) {
-                        Log.d("Succes", it.id.toString())
-                        Log.d("Succes", ":)")
+                        Log.d("Success", it.id.toString())
+                        Log.d("Success", ":)")
                         // it = logged in user parsed as response
                         // it?.id = user ID
                     } else {
-                        Log.d("Error", ":(");
+                        Log.d("Error", ":(")
                     }
                 }
             }
@@ -72,13 +72,13 @@ class UserActivity: AppCompatActivity() {
             override fun onClick(view: View?) {
                 loginUser(User(null, null, null, null, null, null, null, null, null,
                     null, register_username_input.text.toString(), register_password_input.text.toString(), null, null)){
-                    if (it?.username == register_username_input.text.toString() && it?.password == register_password_input.text.toString() ) {
-                        Log.d("Succes", it.id.toString())
-                        Log.d("Succes", ":)")
+                    if (it?.id != null) { //username == register_username_input.text.toString() && it?.password == register_password_input.text.toString() ) {
+                        Log.d("Success", it.id.toString())
+                        Log.d("Success", ":)")
                         // it = logged in user parsed as response
                         // it?.id = user ID
                     } else {
-                        Log.d("Error", ":(");
+                        Log.d("Error", ":(")
                     }
                 }
             }

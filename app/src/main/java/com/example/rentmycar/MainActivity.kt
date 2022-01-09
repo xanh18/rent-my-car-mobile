@@ -24,7 +24,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-const val BASE_URL = "http://10.0.2.2:8080/"
+const val BASE_URL = "http://10.0.2.2:8090/"
 class MainActivity : AppCompatActivity() {
 
     lateinit var mainMenuPlanTripsBtn: Button
@@ -48,7 +48,6 @@ class MainActivity : AppCompatActivity() {
         mainMenuMyTripBtn = findViewById(R.id.main_menu_my_trip_btn)
         mainMenuMyTripBtn.setOnClickListener{
             val Intent = Intent(this, UserActivity::class.java)
-            d("a", "b")
             startActivity(Intent)
         }
 
