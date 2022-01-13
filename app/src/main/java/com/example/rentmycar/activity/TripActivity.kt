@@ -42,27 +42,24 @@ class TripActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.trips_layout)
 
-
-
-
-
-        mainMenuMyTripBtn = findViewById(R.id.main_menu_my_trip_btn)
-        mainMenuMyTripBtn.setOnClickListener{
-            val Intent = Intent(this, UserActivity::class.java)
-            startActivity(Intent)
-        }
-
-        mainMenuRegisterCarBtn = findViewById(R.id.main_menu_register_car_btn)
-        mainMenuRegisterCarBtn.setOnClickListener{
-            val Intent = Intent(this, UserActivity::class.java)
-            startActivity(Intent)
-        }
-
-        mainMenuPlanTripsBtn = findViewById(R.id.main_menu_plan_trips_btn)
-        mainMenuPlanTripsBtn.setOnClickListener{
-            val Intent = Intent(this, CarActivity::class.java)
-            startActivity(Intent)
-        }
+//
+//        mainMenuMyTripBtn = findViewById(R.id.main_menu_my_trip_btn)
+//        mainMenuMyTripBtn.setOnClickListener{
+//            val Intent = Intent(this, UserActivity::class.java)
+//            startActivity(Intent)
+//        }
+//
+//        mainMenuRegisterCarBtn = findViewById(R.id.main_menu_register_car_btn)
+//        mainMenuRegisterCarBtn.setOnClickListener{
+//            val Intent = Intent(this, UserActivity::class.java)
+//            startActivity(Intent)
+//        }
+//
+//        mainMenuPlanTripsBtn = findViewById(R.id.main_menu_plan_trips_btn)
+//        mainMenuPlanTripsBtn.setOnClickListener{
+//            val Intent = Intent(this, CarActivity::class.java)
+//            startActivity(Intent)
+//        }
 
 
         test_button = findViewById(R.id.test_button)

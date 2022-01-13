@@ -32,7 +32,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-const val BASE_URL = "http://10.0.2.2:8090/"
+const val BASE_URL = "http://10.0.2.2:8070/"
 class MainActivity : AppCompatActivity() {
 
     lateinit var linearLayoutManager: LinearLayoutManager
@@ -78,8 +78,8 @@ class MainActivity : AppCompatActivity() {
                     if (it?.id != null) { //username == register_username_input.text.toString() && it?.password == register_password_input.text.toString() ) {
                         Log.d("Success", it.id.toString())
                         Log.d("Success", ":)")
-                            val Intent = Intent(UserActivity.this, TripActivity::class.java)
-                            startActivity(Intent)
+                            val intent = Intent(this@MainActivity, TripActivity::class.java)
+                            startActivity(intent)
                     } else {
                         Log.d("Error", ":(")
                     }
