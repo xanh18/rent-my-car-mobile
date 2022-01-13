@@ -43,48 +43,48 @@ class UserActivity: AppCompatActivity() {
     lateinit var register_username_input : EditText
     lateinit var register_password_input : EditText
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.user_register)
-        register_username_input = findViewById(R.id.register_username_input)
-        register_password_input = findViewById(R.id.register_password_input)
-        registerUserBtn = findViewById(R.id.register_button)
-        loginUserBtn = findViewById(R.id.login_button)
-
-        registerUserBtn.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(view: View?) {
-                registerUser(User(null, null, null, null, null, null, null, null, null,
-                    null, register_username_input.text.toString(), register_password_input.text.toString(), null, null)){
-                    if (it?.id != null) {
-                        Log.d("Success", it.id.toString())
-                        Log.d("Success", ":)")
-                        // it = logged in user parsed as response
-                        // it?.id = user ID
-                    } else {
-                        Log.d("Error", ":(")
-                    }
-                }
-            }
-        })
-
-        loginUserBtn.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(view: View?) {
-                loginUser(User(null, null, null, null, null, null, null, null, null,
-                    null, register_username_input.text.toString(), register_password_input.text.toString(), null, null)){
-                    if (it?.id != null) { //username == register_username_input.text.toString() && it?.password == register_password_input.text.toString() ) {
-                        Log.d("Success", it.id.toString())
-                        Log.d("Success", ":)")
-                        // it = logged in user parsed as response
-                        // it?.id = user ID
-                    } else {
-                        Log.d("Error", ":(")
-                    }
-                }
-            }
-        })
-        //getMyData()
-    }
+//
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        setContentView(R.layout.user_register)
+//        register_username_input = findViewById(R.id.register_username_input)
+//        register_password_input = findViewById(R.id.register_password_input)
+//        registerUserBtn = findViewById(R.id.register_button)
+//        loginUserBtn = findViewById(R.id.login_button)
+//
+//        registerUserBtn.setOnClickListener(object : View.OnClickListener {
+//            override fun onClick(view: View?) {
+//                registerUser(User(null, null, null, null, null, null, null, null, null,
+//                    null, register_username_input.text.toString(), register_password_input.text.toString(), null, null)){
+//                    if (it?.id != null) {
+//                        Log.d("Success", it.id.toString())
+//                        Log.d("Success", ":)")
+//                        // it = logged in user parsed as response
+//                        // it?.id = user ID
+//                    } else {
+//                        Log.d("Error", ":(")
+//                    }
+//                }
+//            }
+//        })
+//
+//        loginUserBtn.setOnClickListener(object : View.OnClickListener {
+//            override fun onClick(view: View?) {
+//                loginUser(User(null, null, null, null, null, null, null, null, null,
+//                    null, register_username_input.text.toString(), register_password_input.text.toString(), null, null)){
+//                    if (it?.id != null) { //username == register_username_input.text.toString() && it?.password == register_password_input.text.toString() ) {
+//                        Log.d("Success", it.id.toString())
+//                        Log.d("Success", ":)")
+//                        // it = logged in user parsed as response
+//                        // it?.id = user ID
+//                    } else {
+//                        Log.d("Error", ":(")
+//                    }
+//                }
+//            }
+//        })
+//        //getMyData()
+//    }
 
 //
     private fun loginUser(params: User, onResult: (User?) -> Unit) {
