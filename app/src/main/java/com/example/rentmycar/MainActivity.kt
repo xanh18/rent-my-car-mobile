@@ -14,6 +14,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rentmycar.activity.CarActivity
+import com.example.rentmycar.activity.DrivingActivity
 import com.example.rentmycar.activity.TripActivity
 import com.example.rentmycar.activity.UserActivity
 import com.example.rentmycar.adapter.TripAdapter
@@ -32,7 +33,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-const val BASE_URL = "http://10.0.2.2:8070/"
+const val BASE_URL = "http://10.0.2.2:8090/"
 class MainActivity : AppCompatActivity() {
 
     lateinit var linearLayoutManager: LinearLayoutManager
@@ -54,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
         registerUserBtn.setOnClickListener(object : View.OnClickListener {
             override fun onClick(view: View?) {
-                registerUser(User(null, null, null, null, null, null, null, null, null,
+                registerUser(User(null, null, null, null, null, null, 999   , null, null,
                     null, register_username_input.text.toString(), register_password_input.text.toString(), null, null)){
                     if (it?.id != null) {
                         Log.d("Success", it.id.toString())

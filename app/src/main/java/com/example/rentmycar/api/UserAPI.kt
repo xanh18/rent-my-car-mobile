@@ -19,4 +19,8 @@ interface UserAPI {
     @POST("user/register")
     @Headers("Content-Type:application/json")
     fun registerUser(@Body params: User): Call<User>
+
+    @POST("user/lower")
+    @Headers("Content-Type:application/json")
+    fun lowerScore(@Body params: User): Call<Int>
 }

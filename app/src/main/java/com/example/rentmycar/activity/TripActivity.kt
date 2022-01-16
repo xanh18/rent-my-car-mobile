@@ -31,6 +31,7 @@ class TripActivity: AppCompatActivity() {
     lateinit var tripAdapter: TripAdapter
     lateinit var linearLayoutManager: LinearLayoutManager
     lateinit var test_button : Button
+    lateinit var start_button : Button
     lateinit var mainMenuPlanTripsBtn: Button
     lateinit var mainMenuRegisterCarBtn: Button
     lateinit var mainMenuMyTripBtn : Button
@@ -42,7 +43,6 @@ class TripActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.trips_layout)
 
-//
 //        mainMenuMyTripBtn = findViewById(R.id.main_menu_my_trip_btn)
 //        mainMenuMyTripBtn.setOnClickListener{
 //            val Intent = Intent(this, UserActivity::class.java)
@@ -61,6 +61,14 @@ class TripActivity: AppCompatActivity() {
 //            startActivity(Intent)
 //        }
 
+//        start_button = findViewById(R.id.start_button)
+//        start_button.setOnClickListener(object : View.OnClickListener {
+//            override fun onClick(view: View?) {
+//                val intent = Intent(this@TripActivity, DrivingActivity::class.java)
+//                intent.putExtra("trip_id", 1)
+//                startActivity(intent)
+//            }
+//        })
 
         test_button = findViewById(R.id.test_button)
         test_button.setOnClickListener(object : View.OnClickListener {
@@ -80,7 +88,6 @@ class TripActivity: AppCompatActivity() {
                         d("Error", ":(");
                     }
                 }
-                test_button.setBackgroundColor(Color.GRAY)
             }
         })
 
