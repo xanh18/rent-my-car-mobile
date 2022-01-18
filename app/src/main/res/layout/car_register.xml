@@ -6,89 +6,98 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/upload_image_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Upload image" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="70dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        tools:text="Car name" />
+        android:text="Upload image" />
 
     <EditText
-        android:id="@+id/car_name_input"
+        android:id="@+id/car_brand_input"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="128dp"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/car_brand_view"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
+    <TextView
+        android:id="@+id/car_brand_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="70dp"
-        android:text="CheckBox"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="68dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        tools:text="Gas" />
+        app:layout_constraintTop_toBottomOf="@+id/upload_image_view"
+        android:text="Brand" />
 
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/car_model_input"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="15dp"
-        android:text="CheckBox"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="4dp"
+        android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox"
-        tools:text="Electric" />
+        app:layout_constraintTop_toBottomOf="@+id/car_model_view"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-    <CheckBox
-        android:id="@+id/checkBox3"
+    <TextView
+        android:id="@+id/car_price_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="15dp"
-        android:text="CheckBox"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox2"
-        tools:text="Hydrogen" />
+        app:layout_constraintTop_toBottomOf="@+id/car_model_input"
+        android:text="Price" />
+
+    <EditText
+        android:id="@+id/car_price_input"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="4dp"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/car_price_view"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/car_model_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/car_brand_input"
+        android:text="Model" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="70dp"
         android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        tools:layout_editor_absoluteY="36dp"
+        app:layout_constraintStart_toEndOf="@+id/upload_image_view"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="Add Image" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/submit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox3"
+        app:layout_constraintTop_toBottomOf="@+id/car_price_input"
         tools:text="Submit car" />
 </androidx.constraintlayout.widget.ConstraintLayout>

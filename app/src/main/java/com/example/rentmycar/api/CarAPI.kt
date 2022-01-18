@@ -2,7 +2,9 @@ package com.example.rentmycar.api
 
 import com.example.rentmycar.model.Car
 import retrofit2.Call
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.Headers
 import retrofit2.http.POST
 import java.util.*
 
@@ -15,7 +17,8 @@ interface CarAPI {
     fun findById(): Call<Optional<Car>>
 
     @POST("car/save")
-    fun saveCar(): Call<Car>
+    @Headers("Content-Type:application/json")
+    fun saveCar(@Body params: Car): Call<Boolean>
 
     @GET("car/brand/{brand}")
     fun findByBrandContaining(): Call<List<Car>>

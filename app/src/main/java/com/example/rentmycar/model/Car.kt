@@ -3,7 +3,7 @@ package com.example.rentmycar.model
 import com.google.gson.annotations.SerializedName
 
 data class Car(
-    @SerializedName("id") val id: Int,
+    @SerializedName("id") val id: Int?,
     @SerializedName("brand") val brand: String?,
     @SerializedName("brandModel") val brandModel: String?,
     @SerializedName("carRange") val carRange: Int?,
