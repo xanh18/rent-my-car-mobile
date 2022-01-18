@@ -35,6 +35,9 @@
         <activity
             android:name=".activity.CarActivity"
             />
+        <activity
+            android:name=".activity.MainMenuActivity"
+            />
     </application>
 
 </manifest>
