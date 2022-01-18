@@ -24,9 +24,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.UserActivity"
-            />
-        <activity
             android:name=".activity.DrivingActivity"
             />
         <activity
@@ -34,6 +31,9 @@
             />
         <activity
             android:name=".activity.CarActivity"
+            />
+        <activity
+            android:name=".activity.CarRegisterActivity"
             />
         <activity
             android:name=".activity.MainMenuActivity"

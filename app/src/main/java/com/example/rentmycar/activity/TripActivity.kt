@@ -6,6 +6,8 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log.d
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import androidx.activity.viewModels
@@ -36,6 +38,20 @@ class TripActivity: AppCompatActivity() {
     lateinit var mainMenuRegisterCarBtn: Button
     lateinit var mainMenuMyTripBtn : Button
     lateinit var mainMenuCarBtn : Button
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.navmenu,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.main_menu_my_trip_btn -> startActivity(Intent(this, TripActivity::class.java))
+            R.id.main_menu_plan_trips_btn -> startActivity(Intent(this, CarActivity::class.java))
+            R.id.main_menu_register_car_btn -> startActivity(Intent(this, CarRegisterActivity::class.java))
+        }
+        return super.onOptionsItemSelected(item)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         getMyData(false)

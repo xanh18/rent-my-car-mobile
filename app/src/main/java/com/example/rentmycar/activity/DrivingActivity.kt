@@ -1,6 +1,7 @@
 package com.example.rentmycar.activity
 
 
+import android.content.Intent
 import android.graphics.Color
 import android.hardware.Sensor
 import android.hardware.SensorEvent
@@ -9,6 +10,8 @@ import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log.d
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -33,6 +36,20 @@ class DrivingActivity: AppCompatActivity(), SensorEventListener {
     lateinit var sensorManager : SensorManager
     var trip_id : Int = 0
     var active : Boolean = true
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.navmenu,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.main_menu_my_trip_btn -> startActivity(Intent(this, TripActivity::class.java))
+            R.id.main_menu_plan_trips_btn -> startActivity(Intent(this, CarActivity::class.java))
+            R.id.main_menu_register_car_btn -> startActivity(Intent(this, CarRegisterActivity::class.java))
+        }
+        return super.onOptionsItemSelected(item)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         trip_id = intent.getStringExtra("trip_id").toString().toInt()

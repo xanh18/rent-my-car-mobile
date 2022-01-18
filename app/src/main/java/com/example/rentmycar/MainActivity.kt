@@ -4,28 +4,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.util.Log.d
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.rentmycar.activity.CarActivity
-import com.example.rentmycar.activity.DrivingActivity
-import com.example.rentmycar.activity.TripActivity
 import com.example.rentmycar.activity.MainMenuActivity
-import com.example.rentmycar.activity.UserActivity
-import com.example.rentmycar.adapter.TripAdapter
-import com.example.rentmycar.adapter.UserAdapter
-import com.example.rentmycar.api.TripAPI
 import com.example.rentmycar.api.UserAPI
-import com.example.rentmycar.model.Car
-import com.example.rentmycar.model.Trip
 import com.example.rentmycar.model.User
-import com.example.rentmycar.viewmodel.TripViewModel
 import kotlinx.android.synthetic.main.main_layout.*
 import kotlinx.android.synthetic.main.main_menu.*
 import kotlinx.android.synthetic.main.trips_layout.*
@@ -39,7 +26,6 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var linearLayoutManager: LinearLayoutManager
 
-    lateinit var userAdapter: UserAdapter
     lateinit var constraintLayout: ConstraintLayout
     lateinit var registerUserBtn : Button
     lateinit var loginUserBtn : Button

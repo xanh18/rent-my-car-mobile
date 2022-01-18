@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="15dp"
-        android:text="My Car"
+        android:text="New car"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/main_menu_my_trip_btn"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
