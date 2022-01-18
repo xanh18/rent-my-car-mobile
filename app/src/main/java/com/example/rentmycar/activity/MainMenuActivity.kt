@@ -21,18 +21,18 @@ class MainMenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.trips_layout)
+        setContentView(R.layout.main_layout)
 
 
         mainMenuMyTripBtn = findViewById(R.id.main_menu_my_trip_btn)
         mainMenuMyTripBtn.setOnClickListener{
-            val Intent = Intent(this, UserActivity::class.java)
+            val Intent = Intent(this, CarRegisterActivity::class.java)
             startActivity(Intent)
         }
 
         mainMenuRegisterCarBtn = findViewById(R.id.main_menu_register_car_btn)
         mainMenuRegisterCarBtn.setOnClickListener{
-            val Intent = Intent(this, UserActivity::class.java)
+            val Intent = Intent(this, TripActivity::class.java)
             startActivity(Intent)
         }
 
