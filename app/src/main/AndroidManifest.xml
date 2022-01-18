@@ -36,7 +36,7 @@
             android:name=".activity.CarActivity"
             />
         <activity
-            android:name=".activity.CarRegisterActivity"
+            android:name=".activity.MainMenuActivity"
             />
     </application>
 
