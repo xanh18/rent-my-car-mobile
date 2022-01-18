@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rentmycar.activity.CarActivity
 import com.example.rentmycar.activity.DrivingActivity
 import com.example.rentmycar.activity.TripActivity
+import com.example.rentmycar.activity.MainMenuActivity
 import com.example.rentmycar.activity.UserActivity
 import com.example.rentmycar.adapter.TripAdapter
 import com.example.rentmycar.adapter.UserAdapter
@@ -76,10 +77,10 @@ class MainActivity : AppCompatActivity() {
             override fun onClick(view: View?) {
                 loginUser(User(null, null, null, null, null, null, null, null, null,
                     null, register_username_input.text.toString(), register_password_input.text.toString(), null, null)){
-                    if (it?.id != null) { //username == register_username_input.text.toString() && it?.password == register_password_input.text.toString() ) {
+                    if (it?.id != null) {
                         Log.d("Success", it.id.toString())
                         Log.d("Success", ":)")
-                            val intent = Intent(this@MainActivity, TripActivity::class.java)
+                            val intent = Intent(this@MainActivity, MainMenuActivity::class.java)
                             startActivity(intent)
                     } else {
                         Log.d("Error", ":(")

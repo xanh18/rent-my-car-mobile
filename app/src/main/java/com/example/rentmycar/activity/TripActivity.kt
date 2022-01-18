@@ -43,33 +43,6 @@ class TripActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.trips_layout)
 
-//        mainMenuMyTripBtn = findViewById(R.id.main_menu_my_trip_btn)
-//        mainMenuMyTripBtn.setOnClickListener{
-//            val Intent = Intent(this, UserActivity::class.java)
-//            startActivity(Intent)
-//        }
-//
-//        mainMenuRegisterCarBtn = findViewById(R.id.main_menu_register_car_btn)
-//        mainMenuRegisterCarBtn.setOnClickListener{
-//            val Intent = Intent(this, UserActivity::class.java)
-//            startActivity(Intent)
-//        }
-//
-//        mainMenuPlanTripsBtn = findViewById(R.id.main_menu_plan_trips_btn)
-//        mainMenuPlanTripsBtn.setOnClickListener{
-//            val Intent = Intent(this, CarActivity::class.java)
-//            startActivity(Intent)
-//        }
-
-//        start_button = findViewById(R.id.start_button)
-//        start_button.setOnClickListener(object : View.OnClickListener {
-//            override fun onClick(view: View?) {
-//                val intent = Intent(this@TripActivity, DrivingActivity::class.java)
-//                intent.putExtra("trip_id", 1)
-//                startActivity(intent)
-//            }
-//        })
-
         test_button = findViewById(R.id.test_button)
         test_button.setOnClickListener(object : View.OnClickListener {
             override fun onClick(view: View?) {
