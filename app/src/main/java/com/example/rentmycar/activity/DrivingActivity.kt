@@ -12,29 +12,20 @@ import android.util.Log.d
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import androidx.activity.viewModels
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rentmycar.R
 import com.example.rentmycar.ServiceBuilder
-import com.example.rentmycar.adapter.TripAdapter
 import com.example.rentmycar.api.TripAPI
 import com.example.rentmycar.api.UserAPI
 import com.example.rentmycar.model.Acceleration
-import com.example.rentmycar.model.Car
 import com.example.rentmycar.model.Trip
 import com.example.rentmycar.model.User
-import com.example.rentmycar.viewmodel.TripViewModel
-import kotlinx.android.synthetic.main.trips_layout.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
-//const val BASE_URL = "http://10.0.2.2:8090/"
 class DrivingActivity: AppCompatActivity(), SensorEventListener {
 
-    //lateinit var drivingAdapter: DrivingAdapter
     lateinit var linearLayoutManager: LinearLayoutManager
     lateinit var gps: TextView
     lateinit var credit_score_text: TextView
@@ -44,8 +35,6 @@ class DrivingActivity: AppCompatActivity(), SensorEventListener {
     var active : Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        //getMyData(false
-
         trip_id = intent.getStringExtra("trip_id").toString().toInt()
 
         super.onCreate(savedInstanceState)
@@ -73,14 +62,6 @@ class DrivingActivity: AppCompatActivity(), SensorEventListener {
                 }
             }
         })
-
-//        recyclerview_trips.setHasFixedSize(true)
-//
-//        linearLayoutManager = LinearLayoutManager(this)
-//        recyclerview_trips.layoutManager = linearLayoutManager
-
-
-        //getMyData(false)
     }
 
     private fun acceleration(params: Trip, onResult: (Boolean?) -> Unit){
@@ -119,9 +100,6 @@ class DrivingActivity: AppCompatActivity(), SensorEventListener {
                         }
                     )
                 }
-                // it = newly added user parsed as response
-                // it?.id = newly added user ID
-                //getMyData(true);
             } else {
                 d("Error", ":(");
             }
@@ -143,18 +121,5 @@ class DrivingActivity: AppCompatActivity(), SensorEventListener {
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
         return
     }
-
-//    private fun getMyData(update: Boolean) {
-//        val model: TripViewModel by viewModels()
-//        model.getTrips().observe(this, Observer<List<Trip>>{ trips ->
-//            tripAdapter = TripAdapter(baseContext, trips)
-//            tripAdapter.notifyDataSetChanged()
-//            recyclerview_trips.adapter = tripAdapter
-//        })
-//        if (update) {
-//            model.updateTrips()
-//            model.getTrips().value?.let { tripAdapter.update(it) }
-//        }
-//    }
 
 }

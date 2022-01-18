@@ -1,47 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="120dp">
+    android:layout_height="wrap_content"
+    app:cardElevation="8dp"
+    android:layout_margin="8dp">
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        tools:layout_editor_absoluteX="1dp" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_brand"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dp"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="30dp"
-        tools:text="Audi" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="10sp"
-        tools:layout_editor_absoluteX="318dp"
-        tools:layout_editor_absoluteY="30dp"
-        tools:text="€5,21" />
+            <ImageView
+                android:id="@+id/image_movie"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@mipmap/ic_launcher" />
 
-    <ImageView
-        android:id="@+id/iv_image"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:srcCompat="@tools:sample/avatars" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_brand_model"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dp"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="85dp"
-        tools:text="A1" />
+                <TextView
+                    android:id="@+id/brand"
+                    android:textColor="@android:color/black"
+                    android:textStyle="normal"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="5dp"
+                    android:text="brand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/brand_model"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="brand_model"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/plan_button"
+                    android:layout_width="36dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Go" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
