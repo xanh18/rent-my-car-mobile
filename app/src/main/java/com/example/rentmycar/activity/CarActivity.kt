@@ -1,6 +1,5 @@
 package com.example.rentmycar.activity
 
-
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,21 +13,18 @@ import com.example.rentmycar.adapter.CarAdapter
 import com.example.rentmycar.model.Car
 import com.example.rentmycar.viewmodel.CarViewModel
 import kotlinx.android.synthetic.main.cars_layout.*
-import kotlinx.android.synthetic.main.trips_layout.*
 
-
-//const val BASE_URL = "http://10.0.2.2:8090/"
 class CarActivity : AppCompatActivity() {
-
     lateinit var carAdapter: CarAdapter
-
     lateinit var linearLayoutManager: LinearLayoutManager
 
+    //Creates option menu
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.navmenu,menu)
         return true
     }
 
+    //Sets intents for option menu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.main_menu_my_trip_btn -> startActivity(Intent(this, TripActivity::class.java))
@@ -39,7 +35,7 @@ class CarActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        getMyData()
+        getCars()
 
         super.onCreate(savedInstanceState)
 
@@ -49,20 +45,11 @@ class CarActivity : AppCompatActivity() {
         linearLayoutManager = LinearLayoutManager(this)
         recyclerview_cars.layoutManager = linearLayoutManager
 
-
-        getMyData()
+        getCars()
     }
 
-//    val model: CarViewModel by viewModels()
-//    model.getCars().observe(this, Observer<List><Car>>
-//    {
-//        cars ->
-//        carAdapter = CarAdapter(baseContext, cars)
-//        carAdapter.notifyDataSetChanged()
-//    })
-
-
-    private fun getMyData() {
+    //Create car adapter to retrieve car data and put it in a recyclerview
+    private fun getCars() {
         val model: CarViewModel by viewModels()
         model.getCars().observe(this, Observer<List<Car>> { cars ->
             carAdapter = CarAdapter(baseContext, cars)
@@ -70,6 +57,4 @@ class CarActivity : AppCompatActivity() {
             recyclerview_cars.adapter = carAdapter
         })
     }
-
-
 }

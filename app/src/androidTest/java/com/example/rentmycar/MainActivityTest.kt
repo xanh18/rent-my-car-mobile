@@ -16,11 +16,13 @@ class MainActivityTest {
     @get:Rule
     var activityScenarioRule = ActivityScenarioRule(MainActivity::class.java)
 
+    //Checks if correct activity is displayed
     @Test
     fun checkActivityVisibility() {
         onView(withId(R.id.layout_mainActivity)).check(matches(isDisplayed()))
     }
 
+    //Checks if username label has correct text
     @Test
     fun checkText() {
         onView(withId(R.id.register_username_label)).check(matches(withText(

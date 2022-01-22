@@ -23,9 +23,6 @@ import retrofit2.Response
 
 const val BASE_URL = "http://10.0.2.2:8090/"
 class MainActivity : AppCompatActivity() {
-
-    lateinit var linearLayoutManager: LinearLayoutManager
-
     lateinit var constraintLayout: ConstraintLayout
     lateinit var registerUserBtn : Button
     lateinit var loginUserBtn : Button
@@ -35,6 +32,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.user_register)
+
+        //Finds and sets input fields and buttons
         register_username_input = findViewById(R.id.register_username_input)
         register_password_input = findViewById(R.id.register_password_input)
         registerUserBtn = findViewById(R.id.register_button)
@@ -46,14 +45,11 @@ class MainActivity : AppCompatActivity() {
                     null, register_username_input.text.toString(), register_password_input.text.toString(), null, null)){
                     if (it?.id != null) {
                         Log.d("Success", it.id.toString())
-                        Log.d("Success", ":)")
-                        Toast.makeText(this@MainActivity, "New user registerd", Toast.LENGTH_SHORT).show()
-
-                        // it = logged in user parsed as response
-                        // it?.id = user ID
+                        //Shows success message on screen
+                        Toast.makeText(this@MainActivity, "New user registered", Toast.LENGTH_SHORT).show()
                     } else {
-                        Log.d("Error", ":(")
-                        Toast.makeText(this@MainActivity, "user already exists", Toast.LENGTH_SHORT).show()
+                        //Shows failure message on screen
+                        Toast.makeText(this@MainActivity, "User already exists", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
@@ -65,26 +61,28 @@ class MainActivity : AppCompatActivity() {
                     null, register_username_input.text.toString(), register_password_input.text.toString(), null, null)){
                     if (it?.id != null) {
                         Log.d("Success", it.id.toString())
-                        Log.d("Success", ":)")
                             val intent = Intent(this@MainActivity, MainMenuActivity::class.java)
                             startActivity(intent)
                     } else {
-                        Log.d("Error", ":(")
+                        //Shows failure message on screen
+                        Toast.makeText(this@MainActivity, "Failed to log in", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
         })
-        //getMyData()
     }
 
     private fun loginUser(params: User, onResult: (User?) -> Unit) {
+        //Builds API service to login with
         val retrofit = ServiceBuilder.buildService(UserAPI::class.java)
+        //Calls API endpoint
         retrofit.loginUser(params).enqueue(
             object : Callback<User> {
                 override fun onFailure(call: Call<User>, t: Throwable) {
                     onResult(null)
                 }
                 override fun onResponse(call: Call<User>, response: Response<User>) {
+                    //Passes result back
                     val user = response.body()
                     onResult(user)
                 }
@@ -93,41 +91,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun registerUser(params: User, onResult: (User?) -> Unit) {
+        //Builds API service to register with
         val retrofit = ServiceBuilder.buildService(UserAPI::class.java)
+        //Calls API endpoint
         retrofit.registerUser(params).enqueue(
             object : Callback<User> {
                 override fun onFailure(call: Call<User>, t: Throwable) {
                     onResult(null)
                 }
                 override fun onResponse(call: Call<User>, response: Response<User>) {
+                    //Passes result back
                     val user = response.body()
                     onResult(user)
                 }
             }
         )
     }
-
-//    private fun addTrip(params: Trip, onResult: (Trip?) -> Unit){
-//        val retrofit = ServiceBuilder.buildService(TripAPI::class.java)
-//        retrofit.planTrip(params).enqueue(
-//            object : Callback<Trip> {
-//                override fun onFailure(call: Call<Trip>, t: Throwable) {
-//                    onResult(null)
-//                }
-//                override fun onResponse( call: Call<Trip>, response: Response<Trip>) {
-//                    val addedTrip = response.body()
-//                    onResult(addedTrip)
-//                }
-//            }
-//        )
-//    }
-//
-//    private fun getMyData() {
-//        val model: TripViewModel by viewModels()
-//        model.getTrips().observe(this, Observer<List<Trip>>{ trips ->
-//            tripAdapter = TripAdapter(baseContext, trips)
-//            tripAdapter.notifyDataSetChanged()
-//            recyclerview_trips.adapter = tripAdapter
-//        })
-//    }
 }

@@ -29,5 +29,4 @@ interface TripAPI {
     @POST("trip/acceleration")
     @Headers("Content-Type:application/json")
     fun acceleration(@Body params: Trip): Call<Boolean>
-
 }

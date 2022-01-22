@@ -1,7 +1,6 @@
 package com.example.rentmycar.adapter
 
 import android.content.Context
-import android.graphics.Color
 import android.os.Build
 import android.util.Log.d
 import android.view.LayoutInflater
@@ -42,22 +41,23 @@ class CarAdapter (val context: Context, var carList: List<Car>): RecyclerView.Ad
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        //Puts brand and model in respective labels
         holder.brand.text = carList[position].brand
         holder.brand_model.text = carList[position].brandModel
+
+        //Saves id in order to pass it to API endpoint
         val id = carList[position].id
         holder.plan_button.setOnClickListener(object : View.OnClickListener {
             override fun onClick(view: View) {
+                //Creates new trip with car id
                 val params = Trip(startDateTime = "2021-12-10T13:49:51.141Z", endDateTime = "2021-12-12T13:49:51.141Z", acceleration = null, distance = null, id = null, location = null,
                     car = Car(id, null, null, null, null, null, null, null, null, null, null, null),
                     user = User(1, null, null, null, null, null, null, null, null, null, null,null, null, null)
                 )
                 addTrip(params){
                     if (it?.id != null) {
-                        d("Succes", it.id.toString())
-                        d("Success", ":)")
+                        d("Success", it.id.toString())
                         holder.plan_button.setBackgroundColor(0x00FF00)
-                        // it = newly added user parsed as response
-                        // it?.id = newly added user ID
                     } else {
                         d("Error", ":(");
                     }
@@ -67,13 +67,16 @@ class CarAdapter (val context: Context, var carList: List<Car>): RecyclerView.Ad
     }
 
     private fun addTrip(params: Trip, onResult: (Trip?) -> Unit){
+        //Builds API service to add trip with
         val retrofit = ServiceBuilder.buildService(TripAPI::class.java)
+        //Calls API endpoint
         retrofit.planTrip(params).enqueue(
             object : Callback<Trip> {
                 override fun onFailure(call: Call<Trip>, t: Throwable) {
                     onResult(null)
                 }
                 override fun onResponse( call: Call<Trip>, response: Response<Trip>) {
+                    //Passes back response
                     val addedTrip = response.body()
                     onResult(addedTrip)
                 }

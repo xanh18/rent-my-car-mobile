@@ -16,11 +16,13 @@ class MainMenuActivity {
     @get:Rule
     var activityScenarioRule = ActivityScenarioRule(MainMenuActivity::class.java)
 
+    //Checks if correct activity is displayed
     @Test
     fun checkActivityVisibility() {
         onView(withId(R.id.main_layout)).check(matches(isDisplayed()))
     }
 
+    //Checks if menu button navigates correctly to the designated layout
     @Test
     fun checkNavigation() {
         onView(withId(R.id.main_menu_my_trip_btn)).perform(click())
