@@ -33,11 +33,6 @@ class TripActivity: AppCompatActivity() {
     lateinit var tripAdapter: TripAdapter
     lateinit var linearLayoutManager: LinearLayoutManager
     lateinit var test_button : Button
-    lateinit var start_button : Button
-    lateinit var mainMenuPlanTripsBtn: Button
-    lateinit var mainMenuRegisterCarBtn: Button
-    lateinit var mainMenuMyTripBtn : Button
-    lateinit var mainMenuCarBtn : Button
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.navmenu,menu)
