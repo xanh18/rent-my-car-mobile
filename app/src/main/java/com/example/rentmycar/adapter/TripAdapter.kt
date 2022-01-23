@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.row_trips.view.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-class TripAdapter (val context: Context, var tripList: List<Trip>): RecyclerView.Adapter<TripAdapter.ViewHolder>() {
+class TripAdapter (val context: Context?, var tripList: List<Trip>): RecyclerView.Adapter<TripAdapter.ViewHolder>() {
     class ViewHolder(tripView: View): RecyclerView.ViewHolder(tripView) {
         var start_date: TextView
         var end_date: TextView
@@ -52,6 +52,10 @@ class TripAdapter (val context: Context, var tripList: List<Trip>): RecyclerView
                 view.context.startActivity(intent)
             }
         })
+    }
+
+    fun getList() : List<Trip> {
+        return tripList
     }
 
     fun update(newTripList:List<Trip>){
