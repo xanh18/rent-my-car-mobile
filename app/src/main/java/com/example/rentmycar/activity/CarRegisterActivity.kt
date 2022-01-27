@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.example.rentmycar.R
 import com.example.rentmycar.ServiceBuilder
 import com.example.rentmycar.api.CarAPI
@@ -77,8 +78,9 @@ class CarRegisterActivity: AppCompatActivity() {
                 }
                 override fun onResponse( call: Call<Boolean>, response: Response<Boolean>) {
                     //Passes result back
-                    val addedTrip = response.body()
-                    onResult(addedTrip)
+                    val addedCar = response.body()
+                    onResult(addedCar)
+                    Toast.makeText(this@CarRegisterActivity, "New car registered", Toast.LENGTH_SHORT).show()
                 }
             }
         )

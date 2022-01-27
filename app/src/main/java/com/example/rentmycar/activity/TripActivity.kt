@@ -4,8 +4,10 @@ package com.example.rentmycar.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log.d
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,6 +25,7 @@ import retrofit2.Response
 class TripActivity: AppCompatActivity() {
     lateinit var tripAdapter: TripAdapter
     lateinit var linearLayoutManager: LinearLayoutManager
+    var success = false
 
     //Creates option menu
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -41,6 +44,13 @@ class TripActivity: AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        //Retrieves trip_id from intent
+        success = intent.getStringExtra("success").toBoolean()
+        d("a", success.toString())
+        if(success) {
+            Toast.makeText(this@TripActivity, "New trip planned", Toast.LENGTH_SHORT).show()
+        }
+
         getTrips(false)
 
         super.onCreate(savedInstanceState)

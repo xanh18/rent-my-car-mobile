@@ -1,6 +1,7 @@
 package com.example.rentmycar.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.os.Build
 import android.util.Log.d
 import android.view.LayoutInflater
@@ -8,10 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rentmycar.R
 import com.example.rentmycar.ServiceBuilder
+import com.example.rentmycar.activity.DrivingActivity
+import com.example.rentmycar.activity.TripActivity
 import com.example.rentmycar.api.TripAPI
 import com.example.rentmycar.model.Car
 import com.example.rentmycar.model.Trip
@@ -58,6 +62,12 @@ class CarAdapter (val context: Context, var carList: List<Car>): RecyclerView.Ad
                     if (it?.id != null) {
                         d("Success", it.id.toString())
                         holder.plan_button.setBackgroundColor(0x00FF00)
+
+                        val intent = Intent(view.context, TripActivity::class.java)
+                        //Saves succes in intent
+                        intent.putExtra("success", true.toString())
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        view.context.startActivity(intent)
                     } else {
                         d("Error", ":(");
                     }
